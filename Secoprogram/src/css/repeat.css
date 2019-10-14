@@ -1,0 +1,70 @@
+
+#kefu {
+    width: 200px;
+    height: 400px;
+    background: #ccc;
+    position: fixed;
+    right: -170px;
+    top: 50%;
+    z-index: 666;
+    transform: translateY(-50%);
+    background: url(../images/kfu.png) no-repeat;
+  }
+  
+  #kefu #close {
+    position: absolute;
+    top: 50%;
+    left: -50px;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 100px;
+    color: #fff;
+  }
+  
+  .cart {
+    width: 60px;
+    height: 65px;
+    display: inline-block;
+    background: url(../images/edo_ico_43.jpg) no-repeat;
+    margin-bottom: 10px;
+    position: fixed;
+    bottom: 50px;
+    right: 0px;
+    z-index: 666;
+  }
+  
+  .cart .sj {
+    width: 60px;
+    height: 65px;
+    display: inline-block;
+    text-align: center;
+    position: relative;
+  }
+  
+  .cart .sj span {
+    padding-top: 46px;
+    display: inline-block;
+  }
+  
+  .totop {
+    width: 60px;
+    height: 54px;
+    position: absolute;
+    bottom: 5px;
+    right: 0px;
+    margin-top: 45px;
+    position: fixed;
+    z-index: 666;
+    background: url(../images/edo_ico_44.png) no-repeat left top;
+    text-align: center;
+  }
+  
+  /* .top .gotop {
+    width: 60px;
+    height: 54px;
+    display: inline-block;
+  } */
+  
+  .ggtop {
+    background: url(../images/edo_ico_48.png) no-repeat left top;
+  }

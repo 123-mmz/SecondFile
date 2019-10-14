@@ -1,0 +1,263 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul,
+li {
+    list-style-type: none;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+#reg_top {
+    width: 100%;
+    background: #f3f3f3;
+    height: auto;
+
+    .top_content {
+        width: 1220px;
+        margin: 0 auto;
+        line-height: 26px;
+        padding: 2px 0 3px;
+        height: 27px;
+
+        .top_left {
+            width: 650px;
+            float: left;
+            color: rgb(102, 102, 102);
+            font-size: 13px;
+            font-family: 宋体;
+
+            a {
+                color: #666;
+            }
+
+            .goindex {
+                font-weight: normal;
+                padding-left: 22px;
+                background: url(../img/index_ico.png) no-repeat left center;
+                margin-right: 13px;
+            }
+        }
+
+        .top_right {
+            float: right;
+            text-align: right;
+            width: 500px;
+            overflow: hidden;
+
+            .reg_list {
+
+                width: 500px;
+                position: relative;
+                font-size: 13px;
+                font-family: "宋体";
+
+                li {
+                    display: inline-block;
+                    zoom: 1;
+                    height: 26px;
+                    line-height: 26px;
+                    background-repeat: no-repeat;
+                    padding-left: 24px;
+                    background-image: url(../img/tuitop_ico.png);
+
+
+                    a {
+                        color: #666666;
+
+                    }
+                }
+
+                // li:nth-child(1) {
+                //     background-image: url(../img/tuitop_ico.png);
+
+                // }
+            }
+        }
+    }
+}
+
+#reg_header {
+    width: 1200px;
+    margin: 0 auto;
+    margin-top: 30px;
+
+    a {
+        img {
+            width: 214px;
+            height: 58px;
+            border: none;
+        }
+    }
+
+    .reg_t {
+        font-size: 28px;
+        color: #333333;
+        margin-left: 37px;
+    }
+}
+
+#reg_main {
+    #form_reg {
+        width: 500px;
+        margin: 50px auto 0px;
+
+        .reg_input {
+            position: relative;
+            width: 500px;
+            display: inline-block;
+            height: 60px;
+
+            label {
+                height: 27px;
+                line-height: 27px;
+                margin: 0px;
+                width: 80px;
+                text-align: right;
+                display: inline-block;
+                color: #3c3c3c;
+            }
+
+            .reg_text {
+                border: 1px solid #CCCCCC;
+                float: none;
+                font-family: arial, "宋体";
+                font-size: 12px;
+                height: 25px;
+                line-height: 25px;
+                padding: 4px 2px 4px 3px;
+                width: 253px;
+                color: #3e3e3e;
+
+            }
+
+            .pswsides {
+                outline: none;
+                position: absolute;
+                display: inline-block;
+                width: 30px;
+                height: 30px;
+                cursor: pointer;
+                overflow: hidden;
+                margin-right: 5px;
+                left: 305px;
+
+                i {
+                    background-image: url(../img/elements.png);
+                    background-position: -30px -88px;
+                    background-repeat: no-repeat;
+                    display: inline-block;
+                    width: 100%;
+                    height: 100%;
+                    overflow: hidden;
+                }
+            }
+
+            .inf {
+                color: red;
+                white-space: nowrap;
+                border: 1px solid #ffbdbe;
+                padding: 0 10px;
+                padding-left: 20px;
+                background: url(../img/error.png) no-repeat left center #ffebeb;
+            }
+
+            .yanz {
+                border: 1px solid #CCCCCC;
+                float: none;
+                font-family: arial, "宋体";
+                font-size: 12px;
+                height: 25px;
+                line-height: 25px;
+                padding: 4px 2px 4px 3px;
+                margin-right: 140px;
+                color: #3e3e3e;
+                width: 113px;
+                margin-right: 140px;
+            }
+            #yanz{
+                width: 92px;
+                height: 35px;
+                display: inline-block;
+                text-align: center;
+                line-height: 35px;
+                font-size: 25px;
+            }
+
+            .yan {
+                position: absolute;
+                right: 5px;
+                top: 0px;
+                width: 135px;
+                height: 35px;
+                left: 210px;
+
+                span {
+
+                    img {
+                        width: 92px;
+                        height: 35px;
+                    }
+                }
+
+                .result {
+                    width: 26px;
+                    height: 26px;
+                    padding-top: 5px;
+                }
+            }
+        }
+
+        .reg_visit {
+            .check_con {
+                padding-left: 60px;
+                line-height: 35px;
+
+                .checkb {
+                    margin-right: 6px;
+                    vertical-align: middle;
+                }
+
+                label {
+                    font-size: 14px;
+                }
+
+                a {
+                    color: #005aa0;
+                    font-size: 12px;
+                    text-decoration: none;
+                }
+            }
+        }
+
+        .reg_btn {
+            width: 306px;
+            height: 34px;
+            margin-top: 15px;
+            margin-left: 75px;
+
+            a {
+                background: #f3210a;
+                color: #fff;
+                display: block;
+                width: 300px;
+                height: 34px;
+                line-height: 34px;
+                text-align: center;
+                border-radius: 5px;
+                font-size: 16px;
+                font-family: "宋体";
+                font-weight: bold;
+            }
+        }
+    }
+}

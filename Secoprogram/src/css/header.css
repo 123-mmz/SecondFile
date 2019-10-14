@@ -1,0 +1,148 @@
+
+.duo_header {
+    background: #3e3e3e;
+    width: 100%;
+    height: auto;
+    color: #fff;
+    font-size: 14px;
+  }
+  
+  .duo_header .dh_contain {
+    width: 1220px;
+    background: #3e3e3e;
+    margin: 0 auto;
+    height: 30px;
+    line-height: 30px;
+    box-sizing: border-box;
+    font-size: 14px;
+  }
+  
+  .duo_header .dh_contain .login_left {
+    float: left;
+  }
+  
+  .duo_header .dh_contain .login_left .welcome {
+    margin-right: 26px;
+  }
+  
+  .duo_header .dh_contain .login_left a {
+    color: #fff;
+  }
+  
+  .duo_header .dh_contain .login_right {
+    float: right;
+  }
+  
+  .duo_header .dh_contain .login_right ul li {
+    margin-right: 44px;
+    float: left;
+  }
+  
+  .duo_header .dh_contain .login_right ul li a {
+    color: #fff;
+    font-size: 14px;
+  }
+  
+  .head {
+    background: #f1f3f0;
+    padding: 30px 0 0px 0;
+    margin-top: 0px;
+  }
+  
+  .head .hd_contain {
+    width: 1220px;
+    margin: 0 auto;
+    height: 90px;
+  }
+  
+  .head .hd_contain .logo {
+    height: 28px;
+    margin-right: 50px;
+    width: 210px;
+    float: left;
+    margin-top: 8px;
+  }
+  
+  .head .hd_contain .logo img {
+    width: 153px;
+    opacity: 1;
+  }
+  
+  .head .hd_contain .search {
+    float: left;
+    position: relative;
+    z-index: 1;
+    padding-left: 0px !important;
+    width: 508px;
+    margin-right: 62px;
+  }
+  
+  .head .hd_contain .search .top_search {
+    position: relative;
+    width: 508px;
+    height: 35px;
+    border: 1px solid #d8ddd7;
+    background: #fff;
+    border-radius: 12px;
+    padding-left: 36px;
+    box-sizing: border-box;
+  }
+  
+  .head .hd_contain .search .top_search .ttexts {
+    border: 0 none;
+    outline: none;
+    display: block;
+    line-height: 33px;
+    width: 393px;
+  }
+  
+  .head .hd_contain .search .top_search .sousuo {
+    position: absolute;
+    top: -1px;
+    right: 0;
+  }
+  
+  .head .hd_contain .search .top_search .sousuo img {
+    opacity: 1;
+  }
+  
+  .head .hd_contain .search .top_search .xiangji {
+    position: absolute;
+    left: 10px;
+    top: 5px;
+  }
+  
+  .head .hd_contain .search .top_search .xiangji img {
+    opacity: 1;
+  }
+  
+  .head .hd_contain .search ul {
+    font-size: 14px;
+    color: #808080;
+    margin: 6px;
+    line-height: 20px;
+  }
+  
+  .head .hd_contain .search ul li {
+    max-width: 70px;
+    white-space: nowrap;
+    float: left;
+    margin-right: 17px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-family: light;
+  }
+  
+  .head .hd_contain .search ul li a {
+    color: #b5aeae;
+  }
+  
+  .head .hd_contain .yunsong {
+    float: left;
+    margin-top: 4px;
+  }
+  
+  .head .hd_contain .yunsong a {
+    margin-right: 44px;
+    float: left;
+  }

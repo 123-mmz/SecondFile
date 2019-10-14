@@ -1,0 +1,318 @@
+$(function(){
+		$.ajax({
+			url:'/new_index.php?app=search&act=cate_nav&top_cate_id='+top_cate_id+'&cate_id='+cate_id,
+			dataType:'html',
+			success:function(html){
+				$('#nav').append(html);
+			}
+		});
+        // 点击document隐藏指定层
+        try{
+            $(document).click(function(e){ 
+                $('#EellFilterPrice,#EellFilterQuantity').removeClass('filter-price-hover');
+            });
+            $('#EellFilterPrice , #EellFilterQuantity').click(function(e) { 
+                e.stopPropagation(); 
+            });
+        }catch(e){}
+		//判断高度显示更多属性值按钮					
+		$('.show_more').each(function(){
+			var height = this.offsetHeight;
+			if (height > 31) {
+				$(this).next().show();
+			}
+		});
+        // 显示更多属性值按钮
+        $('.more').bind('click', function(){
+            if($(this).parent().hasClass('height-auto')){
+                $(this).parent().removeClass('height-auto');
+                $(this).html('<a href="javascript:void(0);" class="J_more"><span>更多</span><span class="arrow icon-up"></span>');
+            }else{
+                $(this).parent().addClass('height-auto');
+                $(this).html('<a href="javascript:void(0);" class="J_more"><span>收起</span><span class="arrow icon-down"></span>');
+            }
+        });			
+        // 显示隐藏多商动态
+        $('#dsdt_up').bind('click', function(){
+            if($(this).parent().hasClass('visible')){
+				$('.ecd_dt').css("height","auto");
+                $(this).parent().removeClass('visible');
+                $(this).html('<a href="javascript:void(0);">收起多商动态︿</a>');				
+				$('.com-bd').slideDown(600);				
+            }else{
+                $(this).parent().addClass('visible');
+				$(this).html('<a href="javascript:void(0);">展开多商动态﹀</a>');
+				$('.com-bd').slideUp(600);
+            }
+        });					
+		
+        // 点击服务属性按钮
+        $('#search_filter_list .fwyjdf-sort,#search_filter_list .fwpf-sort,#search_filter_list .fwad-sort').bind('click', function(){
+				$(this).addClass("thistab").siblings("a").removeClass("thistab");
+        });						
+     // list-item 上移效果	
+        $('.list-view-enlarge .list-item').hover(function(){
+        	$(this).addClass('list-item-hover');
+        	},function(){
+        		$(this).removeClass('list-item-hover');
+        });	
+
+        $('.prdl li').hover(function(){
+        	$(this).addClass('lihover');
+        	},function(){
+        		$(this).removeClass('lihover');
+        });
+		
+		$(".had-more .option-li").hover(
+			function(){
+				$(this).addClass("option-t-hover");
+			},
+			function(){
+				$(this).removeClass("option-t-hover");
+			}
+		);			
+		// 图标 上移效果		
+		$(function(){		
+			$('.dxtip').mouseover(function(){
+				$(this).find('span').addClass('tiphover');		
+				}).mouseout(function(){
+				$(this).find('span').removeClass('tiphover');					
+				});
+				
+			$('.pftip').mouseover(function(){
+				$(this).find('span').addClass('tiphover');			
+				}).mouseout(function(){
+				$(this).find('span').removeClass('tiphover');					
+				});				  
+		} ); 	
+	    //为列表序号为5的倍数添加类
+        $(function() {
+           $("#cpc>li:nth-child(5n)").addClass("oddstyle");
+        });		
+        //导航切换效果
+        $(function() {
+            $(".navli").mouseover(function(){
+            	  var navid = $(this).attr('navid');
+            	  $(".navli").children("a").removeClass('current');
+            	  $(this).children("a").addClass('current');
+            	  $('.re_navli').hide();
+            	  $('#nav_'+navid).show();
+            });
+            
+            var top_nav = $('.current').parent('li').attr('navid');
+            var iTimerID = null;
+            var iElapsedMilliseconds = 100;
+            $('.header_nav').mouseout(function() {
+            	iTimerID = setTimeout(MouseoutEvent, iElapsedMilliseconds);
+            }).mouseover(function(){
+            	if (iTimerID != null) {
+                    clearTimeout(iTimerID);
+                }
+            });
+            
+            function MouseoutEvent() {
+            	$(".navli").children("a").removeClass('current');
+            	//$('.navli_'+top_nav).addClass('current');
+            	$('.re_navli').hide();
+            	//$('#nav_'+top_nav).show();
+            }
+         });				
+		//菜单悬浮
+		jQuery(window).scroll(function(){
+			if( jQuery(this).scrollTop()>270 ){
+				$("#edo_gcate_fixed").css("display","block");  
+				$("#edo_gcate_fixed .fix-box").addClass("box-fixed");     
+			}
+			else{
+				$("#edo_gcate_fixed").css("display","none");
+				$("#edo_gcate_fixed .fix-box").removeClass("box-fixed");  
+			}
+		});
+		//菜单悬浮上移效果
+		$(".sm-cat-list-main .gcate_dl").hover(
+			function(){
+				$(this).addClass("hover");
+				$(this).find(".market-nav-ext").css("display","block");
+			},
+			function(){
+				$(this).removeClass("hover");
+				$(this).find(".market-nav-ext").css("display","none");
+			}
+		);	
+		//鼠标滑动事件
+		$(function(){
+		  $(".services").mouseover(function(){
+		
+					$(this).find('.menu').addClass("xbgyc");
+				  
+			  }).mouseout(function(){
+				$(this).find('.menu').removeClass("xbgyc");
+		  })
+		});		
+		 imgLazyLoad();//初始化  
+		//判断浏览器  
+		if($.browser.msie){  
+		    //IE浏览器  
+		    $(window).scroll(imgLazyLoad);//浏览器的兼容  
+		}else {  
+		    //其他浏览器 ff chrome 测试通过  
+		    $(document).scroll(imgLazyLoad);//当滚动条滚动时,扫描需要加载的div  
+		}  	
+		
+		$('#confirm_page').click(function(){
+			var page = $('#goPageIpt').val();
+			if (page) {
+				without_page_link = without_page_link.replace('.html', '-p_'+page+'.html');
+				window.location.href = without_page_link;
+			} else {
+				alert('请输入要跳转的页面');
+			}
+		});
+
+});
+
+function daixiao_request(goods_id, supplier_id) {
+	  $.getJSON("/index.php?app=f_shop&act=ajax_sync_taobao_click",function(data){
+	  	if(data.retval=='101'){
+	  		TP_ShowDialogIframe("/index.php?app=f_shop&act=ajax_get_sync_confirm&retval="+data.retval+"&ret_url="+window.location.href, 380, 165, "信息提示");
+	  	}else{
+	  		TP_ShowDialogIframe("/index.php?app=daixiao_request&act=add&goods_id="+goods_id+"&supplier_id="+supplier_id, 350, 320, "申请一件代发");
+	  	}
+	  	});
+	}
+
+$('.show_more').each(function(){
+	var height = this.offsetHeight;
+	if (height > 31) {
+		$(this).next().show();
+	}
+});
+
+//品牌搜索
+function s_band() {
+	var keyband = $('#search_band').val();    	
+	var html = '';
+	if (keyband != '') {
+		$('ul[id="band"] li a').each(function(i,n){
+			var text = $(this).html();
+			var href = $(this).attr('href');
+			if (text.indexOf(keyband) != -1) {
+				html += '<li><a href="'+href+'">'+text+'</a></li>';
+			}
+		});
+	} else {
+		$('ul[id="band"] li a').each(function(i,n){
+			var text = $(this).html();
+			var href = $(this).attr('href');
+			html += '<li><a href="'+href+'">'+text+'</a></li>';
+		});
+	}
+	if (html == '') {
+		html += '找不到品牌！';
+	}
+	$('ul[id="band_ini"] li').remove();
+	$('ul[id="band_ini"]').html(html);
+}
+function search_band(e) {
+	if (e.keyCode == 13) {
+		s_band();
+	}
+}
+
+function s_price() {
+	var start = parseInt($('input[name=start_price]').val());
+	var end = parseInt($('input[name=end_price]').val());
+	if (!start && !end) {
+		alert('请输入价格区间');
+	} else {
+		if (!start) {
+			start = 0
+		}
+		if (end) {
+			if(start > end){
+				alert('请输入正确价格区间');
+				return false;
+			}
+			var jump = '_-2,'+start+','+end;
+		} else {
+			var jump = '_-2,'+start;
+		}
+		if (is_taobao) {
+			without_price_link = without_price_link.replace('-t', '-t'+jump);
+		} else {
+			without_price_link = without_price_link.replace('.html', '-t'+jump+'.html');
+		}
+		window.location.href = without_price_link;
+	}
+};
+
+function search_keyword() {
+	var search = $.trim($('#search_keyword').val());
+	if (search) {
+		//var q_keyword = $.trim($('#q_keyword').val());
+		//if(q_keyword != '') search = q_keyword+' '+search;
+
+		$.get("/new_index.php?app=search&act=tags_id&kw="+search,
+			'',
+			function(data){
+				var link = '/glist';
+				if (data.status==200 ) {
+					if(cate_id_get != ''){
+						link = link + '-c_'+cate_id_get;
+					}
+
+					if ( data.id!=false) {
+						link = link + '-k_'+data.id;
+					}else{
+						link = link + '-k_'+search;
+					}
+					
+					if(is_daixiao != ''){
+						link = link + '-d_'+is_daixiao;
+					}
+
+					link = link +'.html';
+					//console.log(link);
+					window.location.href = link;
+				}
+			},
+			'json'
+		);
+
+
+	} else {
+		alert('请输入搜索关键字');
+	}
+}
+
+function enterPress2(e) {
+	 if (e.keyCode == 13) {
+		 search_keyword();
+     }
+}
+
+function imgLazyLoad(){//扫描需要加载的div  
+    $.each($("img"),function(i,o){         
+        //获取窗口高       
+        var windowHeight=$(window).height();  
+        //获取滚动条  
+        var scrollTop=$(document).scrollTop();  
+        windowHeight=windowHeight; //可以设置滚动条在显示某个高度来lazyload   windowHeight=windowHeight/2; 比如在显示屏幕高度2分之1的时候加载  
+          
+          
+        //先判断是否是加载完的图片 跳出  
+        if($(o).attr("src")==$(o).attr("pic")){  
+            return true;  
+        }else if( $(o).offset().top<=(scrollTop+windowHeight)  && $(o).offset().top >= scrollTop ){//判断div是不是出在可见的位置  
+            if($(o).attr("pic") != undefined || $(o).attr("pic") != "undefined" ){  
+                var ObjectSrc = $(o).attr("pic");  
+                //把pic的值赋给src值  
+                $(o).attr("src",ObjectSrc);  
+                //css属性改为可见  
+                $(o).css("visibility","visible");  
+                //渐变时间和渐变值  
+                $(o).fadeTo(1000,1.00);  
+            }  
+        }                 
+    });   
+} 
